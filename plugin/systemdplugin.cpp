@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2018 by David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2017 David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2023 Christian Tallner <chrtall@gmx.de>
  *
  * This file is part of plasma-yamaha.
  *
@@ -14,16 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with plasma-systemd.  If not, see <http://www.gnu.org/licenses/>.
+ * along with plasma-codeship.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
-import org.kde.plasma.configuration 2.0
+#include <QtQml>
+#include "systemdplugin.h"
+#include "systemdprocess.h"
 
-ConfigModel {
-    ConfigCategory {
-         name: i18n('General')
-         icon: 'format-text-code'
-         source: 'config/Config.qml'
-    }
-} 
+void SystemDPlugin::registerTypes(const char *uri) {
+    qmlRegisterType<Process>("Process", 1, 0, "Process");
+}

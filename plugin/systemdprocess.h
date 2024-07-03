@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2017 by David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2017 David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2023 Christian Tallner <chrtall@gmx.de>
  *
  * This file is part of plasma-yamaha.
  *
@@ -17,10 +18,24 @@
  * along with plasma-codeship.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <QtQml>
-#include "plugin.h"
-#include "process.h"
+#ifndef PROCESS_H
+#define PROCESS_H
 
-void Plugin::registerTypes(const char *uri) {
-    qmlRegisterType<Process>("Process", 1, 0, "Process");
-}
+#include <QProcess>
+#include <QVariant>
+#include <QString>
+
+class SystemDProcess : public QProcess
+{
+    Q_OBJECT
+public:
+    Process( QObject *parent = 0);
+    ~Process();
+
+public Q_SLOTS:
+    bool isActive(const QString &name, bool userunit);
+    void start2(const QString &program, const QVariantList &arguments);
+    //Q_INVOKABLE QByteArray readAll();
+};
+
+#endif // PROCESS_H

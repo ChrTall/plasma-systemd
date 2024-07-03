@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "david.baum@naraesk.eu",
+                "Name": "David Baum"
+            },
+            {
+                "Email": "chrtall@gmx.de",
+                "Name": "Christian Tallner"
+            }
+        ],
+        "Description": "Controls Systemd services",
+        "Icon": "format-text-code",
+        "Id": "org.kde.systemd-control",
+        "License": "GPL",
+        "Name": "Systemd Control",
+        "Version": "1.1",
+        "Website": "https://github.com/chrtall/plasma-systemd"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

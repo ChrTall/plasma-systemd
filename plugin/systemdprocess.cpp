@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2017 by David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2017 David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2023 Christian Tallner <chrtall@gmx.de>
  *
  * This file is part of plasma-yamaha.
  *
@@ -18,15 +19,15 @@
  */
 
 #include <QtQml>
-#include "process.h"
+#include "systemdprocess.h"
 
-Process::Process(QObject *parent) : QProcess(parent) {
+SystemDProcess::SystemDProcess(QObject *parent) : QProcess(parent) {
 }
 
-Process::~Process() {
+SystemDProcess::~SystemDProcess() {
 }
 
-bool Process::isActive(const QString &name, bool userunit) {
+bool SystemDProcess::isActive(const QString &name, bool userunit) {
     QStringList arguments;
     QString program;
     if(!userunit) {
@@ -46,7 +47,7 @@ bool Process::isActive(const QString &name, bool userunit) {
     }
 }
 
-void Process::start2(const QString &program, const QVariantList &arguments) {
+void SystemDProcess::start2(const QString &program, const QVariantList &arguments) {
         QStringList args;
 
         // convert QVariantList from QML to QStringList for QProcess

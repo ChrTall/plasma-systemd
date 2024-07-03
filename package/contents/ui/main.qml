@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2018 by David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2018 David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2023 Christian Tallner <chrtall@gmx.de>
  *
  * This file is part of plasma-systemd.
  *

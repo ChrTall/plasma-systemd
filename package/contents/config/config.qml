@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2017 by David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2018 David Baum <david.baum@naraesk.eu>
+ * SPDX-FileCopyrightText: 2023 Christian Tallner <chrtall@gmx.de>
  *
  * This file is part of plasma-yamaha.
  *
@@ -14,22 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with plasma-codeship.  If not, see <http://www.gnu.org/licenses/>.
+ * along with plasma-systemd.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PLASMOIDPLUGIN_H
-#define PLASMOIDPLUGIN_H
+import QtQuick 2.2
+import org.kde.plasma.configuration 2.0
 
-#include <QQmlExtensionPlugin>
-
-class QQmlEngine;
-class Plugin : public QQmlExtensionPlugin
-{
-    Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
-
-public:
-    void registerTypes(const char *uri);
-};
-
-#endif // PLASMOIDPLUGIN_H
+ConfigModel {
+    ConfigCategory {
+         name: i18n('General')
+         icon: 'format-text-code'
+         source: 'config/Config.qml'
+    }
+} 
